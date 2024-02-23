@@ -1,0 +1,81 @@
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Audio Recorder Example</title>
+		<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:ital,wght@1,300&family=Barlow+Condensed:wght@200&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/manage-audio.css')}}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/load.css')}}">
+	</head>
+	<div id="loading">
+		<div class="center">
+			<div class="wave"></div>
+			<div class="wave"></div>
+			<div class="wave"></div>
+			<div class="wave"></div>
+			<div class="wave"></div>
+			<div class="wave"></div>
+			<div class="wave"></div>
+			<div class="wave"></div>
+			<div class="wave"></div>
+			<div class="wave"></div>
+		  </div>
+	</div>
+	<body class="container">
+		<div id="content" style="position: absolute;">
+			<h1 style="text-align:center">Audio Recorder</h1>
+		<div class="audio-record">
+			<button id="recordButton">Start Recording</button>
+			<button id="stopButton" class="inactive">Stop</button>
+		</div>
+		<div class="playback">
+				<audio src="" controls id="audio-playback" class="hidden"></audio>
+		</div>
+
+		<div class="download">
+			<button class="hidden" id="downloadContainer">
+				<a href="" download="" id="downloadButton">Download Audio</a>
+			</button>
+		</div>
+
+		<div style="margin-bottom: 180px;">
+			<h1>Upload Audio File</h1>
+    	<form action="/result" method="post" enctype="multipart/form-data">
+        	<div class="form-container">
+            	<!-- <label for="audioFile">Select an audio file:</label> -->
+            	<input type="file" name="audioFile" id="audioFile" accept="audio/*">
+            	<input type="submit" id="subi" value="Upload" onclick="loading();">
+        	</div>
+    	</form>
+		</div>
+		</div>
+		<script src="{{ url_for('static', filename='js/manage-audio.js')}}"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<!-- <script type="text/javascript">
+
+  			var _gaq = _gaq || [];
+  			_gaq.push(['_setAccount', 'UA-36251023-1']);
+  			_gaq.push(['_setDomainName', 'jqueryscript.net']);
+  			_gaq.push(['_trackPageview']);
+
+  			(function() {
+    		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  			})();
+
+		</script> -->
+		<script type="text/javascript">// <![CDATA[
+			document.getElementById("loading").style.display = "none";
+			function loading(){
+				$("#loading").show();
+				$("#content").hide();       
+			}
+	// ]]></script>
+	</body>
+	</html>

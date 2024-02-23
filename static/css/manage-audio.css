@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Permanent+Marker&display=swap');
+
+body {
+    font-size: 15px;
+    background-color:rgb(107, 180, 168);
+    font-family: 'Alatsi', sans-serif;
+    margin: 0;
+    overflow: hidden;
+    background: black;
+}
+
+  
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+  
+canvas {
+    width: 100%;
+}
+
+/* used to set default load to show Option A until toggled */
+.hidden {
+    display: none;
+}
+
+.inactive {
+    background-color: #eee !important;
+    color: #666 !important;
+    cursor: default !important;
+}
+
+h1{
+    font-family: 'Averia Sans Libre', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 40px;
+    color:antiquewhite;
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+}
+
+
+/* recorder buttons start */
+.audio-record {
+    padding: 10px 10px 20px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#recordButton {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #1E1014;
+    background: #CAFFD0;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+    padding: 30px;
+}
+
+.button-animate {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0px 0px 3px 1px #7eda88;
+    }
+
+    100% {
+        box-shadow: 0px 0px 3px 10px #7eda88;
+
+    }
+}
+
+#stopButton {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #1E1014;
+    background-color: #ea5c64;
+    border: none;
+    border-radius: 5px;
+    padding: 30px;
+    margin: 0 40px;
+    cursor: pointer;
+    align-items: center;
+}
+
+.playback{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#audio-playback {
+    width: 600px;
+    height: 50px;
+}
+
+audio::-webkit-media-controls-panel,
+video::-webkit-media-controls-panel {
+    background-color: #fff;
+}
+
+.download {
+    display: flex;
+    justify-content: center;
+}
+
+#downloadButton {
+    text-decoration: none;
+    color: #1E1014;
+}
+
+#downloadContainer {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #1E1014;
+    background-color: #CAFFD0;
+    border: none;
+    border-radius: 5px;
+    padding: 20px;
+    cursor: pointer;
+}
+
+#audioFile{
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #1E1014;
+    background: #CAFFD0;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+    padding: 30px;
+
+}
+
+#subi{
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #1E1014;
+    background-color: #ea5c64;
+    border: none;
+    border-radius: 5px;
+    padding: 30px;
+    margin: 0 40px;
+    cursor: pointer;
+    align-items: center;    
+}
+
+.form-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+.form-container label, .form-container input[type="file"], .form-container input[type="submit"] {
+    margin: 5px;
+}
+/* recorder buttons end */
+
+.button-container {
+    border: 1px solid black;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
+
+@media all and (max-width: 643px) {
+    .audio-record {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #stopButton {
+        margin: 20px 0;
+    }
+}
+
+
